@@ -9,11 +9,11 @@ function Page() {
     const formVariants = {
         hidden: {
           opacity: 0,
-          y: 50, // Start position below the original position
+          y: 50, 
         },
         visible: {
           opacity: 1,
-          y: 0, // Final position (original position)
+          y: 0,
           transition: {
             type: 'spring',
             stiffness: 100,
@@ -24,7 +24,7 @@ function Page() {
       const formContainerVariants = {
         visible: {
           transition: {
-            staggerChildren: 0.2, // Delay between each child's animation
+            staggerChildren: 0.2, 
           },
         },
       };
@@ -34,22 +34,22 @@ function Page() {
       }
   return (
     <div>
-        <div className='h-[100svh]'>
+        <div className='h-[120svh]'>
             <div className='flex'>
             <motion.form
-        className="flex font-GeistVF mx-auto mt-8 flex-col md:h-[90svh] justify-center md:w-[50%] bg-blue-50 dark:bg-[#101e48] pt-8"
+        className="flex font-GeistVF mx-auto mt-8 flex-col md:min-h-[100svh] justify-center md:w-[50%] bg-blue-50 dark:bg-[#101e48] pt-8"
         initial="hidden"
         animate="visible"
         variants={formContainerVariants}
     >
-            <h1 className='text-4xl text-center mt-4 font-semibold mb-4'>Get In Touch With Us!</h1>
+            <h1 className='text-4xl text-center mt-4 font-semibold mb-4 p-8'>Get In Touch With Us!</h1>
             <p className='mx-auto text-xl font-semibold mb-20'>Thankyou for contacting us.</p>
             <motion.label className="mx-[5%] md:mx-[20%]" htmlFor="username" variants={formVariants}>
             Your Name
             </motion.label>
             <motion.input
             type="text"
-            className="bg-white text-black rounded-md w-[90%] md:w-[50%] my-4 mx-auto p-2"
+            className="bg-white text-black rounded-lg w-[90%] md:w-[50%] my-4 mx-[5%] md:mx-[20%] p-2"
             placeholder="Name"
             name="username"
             id="username"
@@ -60,7 +60,7 @@ function Page() {
             </motion.label>
             <motion.input
             type="email"
-            className="bg-white text-black rounded-md w-[90%] md:w-[50%] my-4 mx-auto p-2"
+            className="bg-white text-black rounded-lg w-[90%] md:w-[50%] my-4 mx-[5%] md:mx-[20%] p-2"
             placeholder="contact@gmail.com"
             name="email"
             id="email"
@@ -70,7 +70,7 @@ function Page() {
             Your Message
             </motion.label>
             <motion.textarea
-            className="bg-white text-black md:w-[55%] w-[90%] mx-auto my-4 h-[12vh] rounded-md p-2"
+            className="bg-white text-black md:w-[50%] w-[90%] mx-[5%] md:mx-[20%] my-4 h-[12vh] rounded-lg p-2"
             name="query"
             placeholder="Type your message here"
             variants={formVariants}
@@ -82,8 +82,8 @@ function Page() {
             <motion.div
              className='md:w-[40%] h-[40%] my-auto md:inline-flex hidden md:justify-center'
              initial={{y:'0%'}}
-             animate={{y:["0%","-25%","0%"]}}
-             transition={{repeat:Infinity, duration:5,ease:easeInOut, yoyo:true}}
+             animate={{y:["0%","-20%","0%"]}}
+             transition={{repeat:Infinity, duration:7,ease:easeInOut, yoyo:true}}
              >
                <Image src={graphic} alt='contact Graphics'/>
             </motion.div>
