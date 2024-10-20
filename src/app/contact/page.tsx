@@ -34,7 +34,7 @@ function Page() {
       }
   return (
     <div>
-        <div className='h-[120svh] lg:h-[103svh]'>
+        <div className='h-[120svh]'>
             <div className='flex'>
             <motion.form
         className="flex font-GeistVF mx-auto mt-8 flex-col md:min-h-[100svh] justify-center md:w-[50%] bg-blue-50 dark:bg-[#101e48] pt-8"
@@ -49,7 +49,7 @@ function Page() {
             </motion.label>
             <motion.input
             type="text"
-            className="bg-white text-black rounded-md w-[90%] md:w-[50%] my-4 mx-[5%] md:mx-[20%] p-2"
+            className="bg-white text-black rounded-lg w-[90%] md:w-[50%] my-4 mx-[5%] md:mx-[20%] p-2"
             placeholder="Name"
             name="username"
             id="username"
@@ -60,7 +60,7 @@ function Page() {
             </motion.label>
             <motion.input
             type="email"
-            className="bg-white text-black rounded-md w-[90%] md:w-[50%] my-4 mx-[5%] md:mx-[20%] p-2"
+            className="bg-white text-black rounded-lg w-[90%] md:w-[50%] my-4 mx-[5%] md:mx-[20%] p-2"
             placeholder="contact@gmail.com"
             name="email"
             id="email"
@@ -70,7 +70,7 @@ function Page() {
             Your Message
             </motion.label>
             <motion.textarea
-            className="bg-white text-black md:w-[55%] w-[90%] mx-[5%] md:mx-[20%] my-4 h-[12vh] rounded-md p-2"
+            className="bg-white text-black md:w-[50%] w-[90%] mx-[5%] md:mx-[20%] my-4 h-[12vh] rounded-lg p-2"
             name="query"
             placeholder="Type your message here"
             variants={formVariants}
