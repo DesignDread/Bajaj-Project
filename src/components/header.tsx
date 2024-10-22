@@ -22,6 +22,7 @@ export function Header() {
             <li><Link href="/projects" className="hover:text-primary">Projects</Link></li>
             <li><Link href="/team" className="hover:text-primary">Team</Link></li>
             <li><Link href="/contact" className="hover:text-primary">Contact</Link></li>
+            <li><Link href="/gallery" className="hover:text-primary">Gallery</Link></li>
           </ul>
         </nav>
         <div className="flex items-center space-x-4">
