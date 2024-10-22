@@ -228,6 +228,67 @@ export default function EventsPage() {
                     </Button>
                 </motion.div>
             )}
+            <motion.h1
+                className="text-5xl font-bold mt-16 mb-10 text-center"
+                initial={{ opacity: 0, y: -30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+            >
+                Past Events Highlights
+            </motion.h1>
+
+            <div className="relative w-full max-w-3xl mx-auto mb-10">
+                <div className="flex items-center justify-between mb-4">
+                    <Button
+                        variant="outline"
+                        size="icon"
+                        className="rounded-full"
+                        onClick={handlePrevVideo}
+                        disabled={currentVideoIndex === 0}
+                    >
+                        <ChevronLeft className="h-4 w-4" />
+                    </Button>
+                    <Button
+                        variant="outline"
+                        size="icon"
+                        className="rounded-full"
+                        onClick={handleNextVideo}
+                        disabled={currentVideoIndex === videoData.length - 1}
+                    >
+                        <ChevronRight className="h-4 w-4" />
+                    </Button>
+                </div>
+                <AnimatePresence mode="wait" initial={false}>
+                    <motion.div
+                        key={currentVideoIndex}
+                        className="w-full rounded-lg overflow-hidden shadow-lg"
+                        initial={{ opacity: 0, x: direction * 300 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: direction * -300 }}
+                        transition={{ duration: 0.5 }}
+                    >
+                        <video
+                            className="w-full h-auto"
+                            controls
+                            poster={videoData[currentVideoIndex].poster}
+                            onPause={(e) => {
+                                const videoElement = e.target as HTMLVideoElement;
+                                videoElement.currentTime = 0; // Reset to start
+                                videoElement.load(); // Reload to show the poster
+                            }}
+                            onEnded={(e) => {
+                                const videoElement = e.target as HTMLVideoElement;
+                                videoElement.currentTime = 0; // Reset to start
+                                videoElement.load(); // Reload to show the poster
+                            }}
+                        >
+                            <source src={videoData[currentVideoIndex].src} type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                    </motion.div>
+
+                </AnimatePresence>
+            </div>
         </div>
     )
 }
