@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { easeInOut, motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedin, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import graphic from "@/public/images/About_Gradient.png";
 import toy from "@/public/images/Welcome _toy.png";
 import Image from "next/image";
@@ -41,7 +43,7 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen max-w-screen flex flex-col items-center justify-center w-screen pb-9 bg-background dark:bg-[#0c0724]">
+    <div className="min-h-screen max-w-screen flex flex-col items-center justify-center box-border w-screen pb-9 bg-background dark:bg-[#0c0724]">
       {/* New First Section with Image and Text */}
       <motion.div
         className="flex flex-wrap lg:flex-nowrap w-[95%] h-screen justify-center items-center mb-8"
@@ -65,10 +67,10 @@ const Home = () => {
         </motion.div>
 
         <div className="w-full flex flex-col justify-center ite">
-          <h2 className="animate-text-animation inline-block text-foreground dark:text-primary-foreground font-bold text-5xl lg:text-7xl relative basis-1/2">
+          <h2 className="animate-text-animation inline-block text-foreground light:text-primary-foreground dark:text-white font-bold text-5xl lg:text-7xl relative basis-1/2">
             Discover the IEEE CIET Society!
           </h2>
-          <p className="text-foreground dark:text-primary-foreground">
+          <p className="text-foreground light:text-primary-foreground dark:text-white">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
             harum at optio nam iste fugiat temporibus fugit rem ullam possimus,
             debitis consectetur vel natus placeat soluta nobis beatae, cum
@@ -85,8 +87,8 @@ const Home = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }} // Trigger animation when 30% of the element is visible
       >
-        <div className="text-black">
-          <h1 className="text-foreground dark:text-primary-foreground font-bold text-6xl lg:text-8xl flex w-full justify-center">
+        <div className="text-primary-foreground dark:text-white ">
+          <h1 className="text-foreground light:text-primary-foreground dark:text-white font-bold text-6xl lg:text-8xl flex w-full justify-center">
             Curriculum Directors
           </h1>
           <motion.div
@@ -162,7 +164,7 @@ const Home = () => {
             ></motion.button>
           </motion.div>
 
-          <div className="text-white w-[80vw] h-60 mt-4 bg-[#151a2e] rounded-lg overflow-auto relative m-auto flex justify-center items-center">
+          <motion.div className="text-primary-foreground w-[80vw] h-60 mt-4 bg-[#D3D3D3] dark:bg-[#151a2e] rounded-lg overflow-auto relative m-auto flex justify-center items-center">
             <div className="duration-1000">
               <h1 className="font-bold text-5xl p-7">
                 {isGrayscale
@@ -175,7 +177,7 @@ const Home = () => {
                   : curriculumDirectors.curriculumDirector2.desc}
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </motion.div>
 
@@ -187,7 +189,7 @@ const Home = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }} // Trigger animation when 30% of the element is visible
       >
-        <h1 className="text-foreground dark:text-primary-foreground font-bold text-5xl lg:text-6xl flex w-full justify-center p-24">
+        <h1 className="text-foreground light:text-primary-foreground dark:text-white font-bold text-5xl lg:text-6xl flex w-full justify-center p-24">
           Our Chairpersons
         </h1>
 
@@ -254,7 +256,7 @@ const Home = () => {
           </motion.div>
 
           {/* Chairperson Text */}
-          <div className="mt-4 text-white bg-[#151a2e] w-1/2 h-86 flex flex-col justify-evenly items-center rounded-lg mb-8">
+          <div className="mt-4 light:text-primary-foreground dark:text-white  bg-[#D3D3D3] dark:bg-[#151a2e]  w-1/2 h-86 flex flex-col justify-evenly items-center rounded-lg mb-8">
             <h2 className="font-bold text-3xl">
               {isGrayscale
                 ? chairpersons.chairperson1.name + " (Grayscale)"
@@ -268,13 +270,13 @@ const Home = () => {
           </div>
         </motion.div>
       </motion.div>
-      <motion.h1 className="text-foreground dark:text-primary-foreground font-bold text-5xl lg:text-6xl flex w-full justify-center p-24">
+      <motion.h1 className="text-foreground light:text-primary-foreground dark:text-white font-bold text-5xl lg:text-6xl flex w-full justify-center p-24">
         Our ViceChairpersons
       </motion.h1>
 
       <motion.div className="flex w-screen justify-center gap-4 flex-wrap-reverse">
         {/* Vice Chairperson Text */}
-        <div className="mt-4 text-white bg-[#151a2e]  w-1/2 h-86 flex flex-col justify-evenly items-center rounded-lg mb-8">
+        <div className="mt-4 light:text-primary-foreground dark:text-white   bg-[#D3D3D3] dark:bg-[#151a2e]   w-1/2 h-86 flex flex-col justify-evenly items-center rounded-lg mb-8">
           <h2 className="font-bold text-3xl">
             {isGrayscale
               ? viceChairpersons.vicechairperson1.name
@@ -330,8 +332,8 @@ const Home = () => {
         </motion.div>
       </motion.div>
 
-      <div className="min-h-screen flex flex-col items-center justify-center p-4">
-        <h1 className="text-foreground dark:text-primary-foreground font-bold lg:text-7xl text-5xl relative mb-8">
+      <motion.div className="min-h-screen flex flex-col items-center justify-center p-4">
+        <h1 className="text-foreground light:text-primary-foreground dark:text-white font-bold lg:text-7xl text-5xl relative mb-8">
           Meet Our Heads And Team
         </h1>
 
@@ -339,27 +341,59 @@ const Home = () => {
           {TeamMembers.map((member, index) => (
             <motion.div
               key={index}
-              className="bg-[#151a2e] rounded-lg flex flex-col h-80 w-80 justify-center items-center m-4 opacity-0 transition-opacity duration-1000"
-              initial={{ opacity: 0 }} // Start with 0 opacity
-              whileInView={{ opacity: 1 }} // Fade in when the element comes into view
-              viewport={{ once: true, amount: 0.2 }} // Trigger when 20% of the element is visible
-              transition={{ duration: 1 }} // Transition duration for the fade-in effect
+              className="bg-[#D3D3D3] dark:bg-[#151a2e] rounded-lg flex flex-col h-80 w-80 justify-center items-center m-4 opacity-0 transition-opacity duration-1000"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 1 }}
             >
               <div className="relative">
                 <motion.img
                   src={member.img}
                   className="relative transition-all duration-1000 h-52 w-full object-cover filter grayscale hover:grayscale-0"
                   alt={member.name}
-                  whileHover={{ scale: 1.05 }} // Scale the image on hover
-                  whileTap={{ scale: 0.95 }} // Scale down on tap
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 />
               </div>
-              <h1 className="text-white font-bold text-3xl">{member.name}</h1>
-              <h3 className="text-white">{member.position}</h3>
+
+              <h1 className="text-primary-foreground dark:text-white font-bold text-3xl">
+                {member.name}
+              </h1>
+              <h3 className="text-primary-foreground dark:text-white">
+                {member.position}
+              </h3>
+
+              {/* Social Media Icons */}
+              <div className="flex space-x-4 mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {/* LinkedIn Icon */}
+                <a
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FontAwesomeIcon
+                    icon={faLinkedin}
+                    className="text-2xl text-primary-foreground dark:text-white hover:text-blue-700 transition-colors duration-300"
+                  />
+                </a>
+
+                {/* Instagram Icon */}
+                <a
+                  href={member.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FontAwesomeIcon
+                    icon={faInstagram}
+                    className="text-2xl text-primary-foreground dark:text-white hover:text-pink-600 transition-colors duration-300"
+                  />
+                </a>
+              </div>
             </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

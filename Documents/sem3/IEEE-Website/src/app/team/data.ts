@@ -2,6 +2,8 @@ export interface Member {
   img: string;
   name: string;
   position: string;
+  linkedin: string;
+  instagram: string;
 }
 
 export const TeamMembers: Member[] = [
@@ -9,16 +11,22 @@ export const TeamMembers: Member[] = [
     img: "https://cdn.prod.website-files.com/635d9f0eb61ccdfa65cb9584/635d9f0eb61ccd973dcb95cd_evoleai_team4.png",
     name: "Soham Chakraborty",
     position: "Technical Head",
+    linkedin: "https://www.linkedin.com/in/johndoe",
+    instagram: "https://www.instagram.com/johndoe",
   },
   {
     img: "https://cdn.prod.website-files.com/635d9f0eb61ccdfa65cb9584/635d9f0eb61ccd973dcb95cd_evoleai_team4.png",
     name: "Soham Chakraborty",
     position: "Technical Head",
+    linkedin: "https://www.linkedin.com/in/johndoe",
+    instagram: "https://www.instagram.com/johndoe",
   },
   {
     img: "https://cdn.prod.website-files.com/635d9f0eb61ccdfa65cb9584/635d9f0eb61ccd973dcb95cd_evoleai_team4.png",
     name: "Soham Chakraborty",
     position: "Technical Head",
+    linkedin: "https://www.linkedin.com/in/johndoe",
+    instagram: "https://www.instagram.com/johndoe",
   },
 ];
 
