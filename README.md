@@ -24,3 +24,4 @@ Health check endpoint.
 ```bash
 npm install
 npm start
+
